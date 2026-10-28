@@ -1,0 +1,36 @@
+{
+  "properties": {
+    "status": {
+      "enum": [
+        "not_authorized",
+        "not_synced",
+        "failed",
+        "available"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "source": {
+      "title": "Source",
+      "type": "string"
+    },
+    "minutes": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Minutes"
+    }
+  },
+  "required": [
+    "status",
+    "source",
+    "minutes"
+  ],
+  "title": "SleepSourceView",
+  "type": "object"
+}

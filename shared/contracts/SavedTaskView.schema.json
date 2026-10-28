@@ -1,0 +1,36 @@
+{
+  "properties": {
+    "id": {
+      "title": "Id",
+      "type": "integer"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    },
+    "dueAt": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Dueat"
+    },
+    "status": {
+      "title": "Status",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "title",
+    "dueAt",
+    "status"
+  ],
+  "title": "SavedTaskView",
+  "type": "object"
+}

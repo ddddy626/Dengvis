@@ -1,0 +1,54 @@
+{
+  "properties": {
+    "version": {
+      "const": 1,
+      "default": 1,
+      "title": "Version",
+      "type": "integer"
+    },
+    "scope": {
+      "title": "Scope",
+      "type": "string"
+    },
+    "riskLevel": {
+      "enum": [
+        "T0",
+        "T1",
+        "T2",
+        "T3",
+        "TS"
+      ],
+      "title": "Risklevel",
+      "type": "string"
+    },
+    "decision": {
+      "enum": [
+        "allow_once",
+        "allow_scope",
+        "deny",
+        "pending"
+      ],
+      "title": "Decision",
+      "type": "string"
+    },
+    "expiresAt": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Expiresat"
+    }
+  },
+  "required": [
+    "scope",
+    "riskLevel",
+    "decision"
+  ],
+  "title": "Permission",
+  "type": "object"
+}

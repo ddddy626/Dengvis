@@ -1,0 +1,29 @@
+{
+  "properties": {
+    "seq": {
+      "title": "Seq",
+      "type": "integer"
+    },
+    "type": {
+      "title": "Type",
+      "type": "string"
+    },
+    "summary": {
+      "title": "Summary",
+      "type": "string"
+    },
+    "timestamp": {
+      "format": "date-time",
+      "title": "Timestamp",
+      "type": "string"
+    }
+  },
+  "required": [
+    "seq",
+    "type",
+    "summary",
+    "timestamp"
+  ],
+  "title": "JobEventView",
+  "type": "object"
+}

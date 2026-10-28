@@ -1,0 +1,29 @@
+{
+  "properties": {
+    "id": {
+      "title": "Id",
+      "type": "integer"
+    },
+    "decision": {
+      "title": "Decision",
+      "type": "string"
+    },
+    "scope": {
+      "title": "Scope",
+      "type": "string"
+    },
+    "expiresAt": {
+      "format": "date-time",
+      "title": "Expiresat",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "decision",
+    "scope",
+    "expiresAt"
+  ],
+  "title": "LifeApprovalView",
+  "type": "object"
+}

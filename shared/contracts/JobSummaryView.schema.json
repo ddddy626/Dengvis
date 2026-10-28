@@ -1,0 +1,58 @@
+{
+  "properties": {
+    "jobId": {
+      "title": "Jobid",
+      "type": "integer"
+    },
+    "status": {
+      "title": "Status",
+      "type": "string"
+    },
+    "decision": {
+      "title": "Decision",
+      "type": "string"
+    },
+    "preview": {
+      "title": "Preview",
+      "type": "string"
+    },
+    "latestEvent": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Latestevent"
+    },
+    "createdAt": {
+      "format": "date-time",
+      "title": "Createdat",
+      "type": "string"
+    },
+    "updatedAt": {
+      "format": "date-time",
+      "title": "Updatedat",
+      "type": "string"
+    },
+    "approvalExpiresAt": {
+      "format": "date-time",
+      "title": "Approvalexpiresat",
+      "type": "string"
+    }
+  },
+  "required": [
+    "jobId",
+    "status",
+    "decision",
+    "preview",
+    "latestEvent",
+    "createdAt",
+    "updatedAt",
+    "approvalExpiresAt"
+  ],
+  "title": "JobSummaryView",
+  "type": "object"
+}

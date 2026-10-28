@@ -1,0 +1,32 @@
+{
+  "properties": {
+    "id": {
+      "title": "Id",
+      "type": "integer"
+    },
+    "kind": {
+      "enum": [
+        "task",
+        "schedule"
+      ],
+      "title": "Kind",
+      "type": "string"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    },
+    "status": {
+      "title": "Status",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "kind",
+    "title",
+    "status"
+  ],
+  "title": "LifeItemView",
+  "type": "object"
+}

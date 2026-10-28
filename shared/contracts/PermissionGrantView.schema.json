@@ -1,0 +1,41 @@
+{
+  "properties": {
+    "id": {
+      "title": "Id",
+      "type": "integer"
+    },
+    "scope": {
+      "title": "Scope",
+      "type": "string"
+    },
+    "dataSource": {
+      "title": "Datasource",
+      "type": "string"
+    },
+    "grantType": {
+      "title": "Granttype",
+      "type": "string"
+    },
+    "expiresAt": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Expiresat"
+    }
+  },
+  "required": [
+    "id",
+    "scope",
+    "dataSource",
+    "grantType",
+    "expiresAt"
+  ],
+  "title": "PermissionGrantView",
+  "type": "object"
+}

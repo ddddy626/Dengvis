@@ -1,0 +1,15 @@
+{
+  "properties": {
+    "scope": {
+      "maxLength": 120,
+      "minLength": 1,
+      "title": "Scope",
+      "type": "string"
+    }
+  },
+  "required": [
+    "scope"
+  ],
+  "title": "PermissionRevoke",
+  "type": "object"
+}

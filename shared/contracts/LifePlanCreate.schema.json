@@ -1,0 +1,103 @@
+{
+  "$defs": {
+    "LifeItemDraft": {
+      "properties": {
+        "kind": {
+          "enum": [
+            "task",
+            "schedule"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "title": {
+          "maxLength": 255,
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "dueAt": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Dueat"
+        },
+        "startsAt": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Startsat"
+        },
+        "endsAt": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Endsat"
+        }
+      },
+      "required": [
+        "kind",
+        "title"
+      ],
+      "title": "LifeItemDraft",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "intent": {
+      "maxLength": 500,
+      "minLength": 1,
+      "title": "Intent",
+      "type": "string"
+    },
+    "idempotencyKey": {
+      "pattern": "^[A-Za-z0-9_-]{8,128}$",
+      "title": "Idempotencykey",
+      "type": "string"
+    },
+    "items": {
+      "anyOf": [
+        {
+          "items": {
+            "$ref": "#/$defs/LifeItemDraft"
+          },
+          "maxItems": 8,
+          "minItems": 1,
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Items"
+    }
+  },
+  "required": [
+    "intent",
+    "idempotencyKey"
+  ],
+  "title": "LifePlanCreate",
+  "type": "object"
+}

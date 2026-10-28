@@ -1,0 +1,5 @@
+pypdf>=5,<8
+rapidocr>=3.10,<4
+onnxruntime>=1.31,<2
+pypdfium2>=5.14,<6
+fastembed>=0.9,<1

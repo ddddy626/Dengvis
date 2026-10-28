@@ -1,0 +1,41 @@
+# Review domain, certificate paths, and /opt/jarvis/web/dist before installation.
+# Keep the API bound to 127.0.0.1; only Nginx accepts public traffic.
+server {
+    listen 80;
+    server_name example.invalid;
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name example.invalid;
+    ssl_certificate /etc/letsencrypt/live/example.invalid/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/example.invalid/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+
+    root /opt/jarvis/web/dist;
+    index index.html;
+    client_max_body_size 64k;
+    add_header X-Content-Type-Options nosniff always;
+    add_header Referrer-Policy strict-origin-when-cross-origin always;
+    add_header Strict-Transport-Security "max-age=31536000" always;
+
+    location /api/ {
+        proxy_pass http://127.0.0.1:8000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        # Replace any client-supplied chain before Uvicorn trusts this proxy.
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_connect_timeout 5s;
+        proxy_read_timeout 45s;
+    }
+
+    location = /health {
+        proxy_pass http://127.0.0.1:8000/health;
+        proxy_set_header Host $host;
+    }
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+}

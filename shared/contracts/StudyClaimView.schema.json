@@ -1,0 +1,23 @@
+{
+  "properties": {
+    "jobId": {
+      "title": "Jobid",
+      "type": "integer"
+    },
+    "query": {
+      "title": "Query",
+      "type": "string"
+    },
+    "maxResults": {
+      "title": "Maxresults",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "jobId",
+    "query",
+    "maxResults"
+  ],
+  "title": "StudyClaimView",
+  "type": "object"
+}

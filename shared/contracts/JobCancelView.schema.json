@@ -1,0 +1,13 @@
+{
+  "properties": {
+    "cancelled": {
+      "title": "Cancelled",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "cancelled"
+  ],
+  "title": "JobCancelView",
+  "type": "object"
+}

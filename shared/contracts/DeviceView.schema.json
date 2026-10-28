@@ -1,0 +1,36 @@
+{
+  "properties": {
+    "deviceId": {
+      "title": "Deviceid",
+      "type": "integer"
+    },
+    "online": {
+      "title": "Online",
+      "type": "boolean"
+    },
+    "lastSeen": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Lastseen"
+    },
+    "revoked": {
+      "title": "Revoked",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "deviceId",
+    "online",
+    "lastSeen",
+    "revoked"
+  ],
+  "title": "DeviceView",
+  "type": "object"
+}

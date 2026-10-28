@@ -1,0 +1,13 @@
+{
+  "properties": {
+    "deleted": {
+      "title": "Deleted",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "deleted"
+  ],
+  "title": "MemoryDeleteView",
+  "type": "object"
+}

@@ -1,0 +1,63 @@
+{
+  "properties": {
+    "kind": {
+      "enum": [
+        "task",
+        "schedule"
+      ],
+      "title": "Kind",
+      "type": "string"
+    },
+    "title": {
+      "maxLength": 255,
+      "minLength": 1,
+      "title": "Title",
+      "type": "string"
+    },
+    "dueAt": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Dueat"
+    },
+    "startsAt": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Startsat"
+    },
+    "endsAt": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Endsat"
+    }
+  },
+  "required": [
+    "kind",
+    "title"
+  ],
+  "title": "LifeItemDraft",
+  "type": "object"
+}

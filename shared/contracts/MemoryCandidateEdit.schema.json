@@ -1,0 +1,30 @@
+{
+  "properties": {
+    "summary": {
+      "maxLength": 1000,
+      "minLength": 1,
+      "title": "Summary",
+      "type": "string"
+    },
+    "purpose": {
+      "enum": [
+        "planning",
+        "conversation"
+      ],
+      "title": "Purpose",
+      "type": "string"
+    },
+    "expiresAt": {
+      "format": "date-time",
+      "title": "Expiresat",
+      "type": "string"
+    }
+  },
+  "required": [
+    "summary",
+    "purpose",
+    "expiresAt"
+  ],
+  "title": "MemoryCandidateEdit",
+  "type": "object"
+}

@@ -1,0 +1,15 @@
+{
+  "properties": {
+    "intent": {
+      "maxLength": 500,
+      "minLength": 1,
+      "title": "Intent",
+      "type": "string"
+    }
+  },
+  "required": [
+    "intent"
+  ],
+  "title": "LifeSuggestionRequest",
+  "type": "object"
+}

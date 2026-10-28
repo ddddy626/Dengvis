@@ -1,0 +1,150 @@
+{
+  "$defs": {
+    "SavedScheduleView": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "integer"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "startsAt": {
+          "format": "date-time",
+          "title": "Startsat",
+          "type": "string"
+        },
+        "endsAt": {
+          "format": "date-time",
+          "title": "Endsat",
+          "type": "string"
+        },
+        "status": {
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "startsAt",
+        "endsAt",
+        "status"
+      ],
+      "title": "SavedScheduleView",
+      "type": "object"
+    },
+    "SavedTaskView": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "integer"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "dueAt": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Dueat"
+        },
+        "status": {
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "dueAt",
+        "status"
+      ],
+      "title": "SavedTaskView",
+      "type": "object"
+    },
+    "SleepSourceView": {
+      "properties": {
+        "status": {
+          "enum": [
+            "not_authorized",
+            "not_synced",
+            "failed",
+            "available"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "source": {
+          "title": "Source",
+          "type": "string"
+        },
+        "minutes": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Minutes"
+        }
+      },
+      "required": [
+        "status",
+        "source",
+        "minutes"
+      ],
+      "title": "SleepSourceView",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "date": {
+      "title": "Date",
+      "type": "string"
+    },
+    "tasks": {
+      "items": {
+        "$ref": "#/$defs/SavedTaskView"
+      },
+      "title": "Tasks",
+      "type": "array"
+    },
+    "schedules": {
+      "items": {
+        "$ref": "#/$defs/SavedScheduleView"
+      },
+      "title": "Schedules",
+      "type": "array"
+    },
+    "sleep": {
+      "$ref": "#/$defs/SleepSourceView"
+    },
+    "sources": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Sources",
+      "type": "object"
+    }
+  },
+  "required": [
+    "date",
+    "tasks",
+    "schedules",
+    "sleep",
+    "sources"
+  ],
+  "title": "MorningReportView",
+  "type": "object"
+}

@@ -1,0 +1,45 @@
+{
+  "$defs": {
+    "ChatHistoryItem": {
+      "properties": {
+        "role": {
+          "enum": [
+            "user",
+            "assistant"
+          ],
+          "title": "Role",
+          "type": "string"
+        },
+        "content": {
+          "title": "Content",
+          "type": "string"
+        },
+        "createdAt": {
+          "title": "Createdat",
+          "type": "string"
+        }
+      },
+      "required": [
+        "role",
+        "content",
+        "createdAt"
+      ],
+      "title": "ChatHistoryItem",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "messages": {
+      "items": {
+        "$ref": "#/$defs/ChatHistoryItem"
+      },
+      "title": "Messages",
+      "type": "array"
+    }
+  },
+  "required": [
+    "messages"
+  ],
+  "title": "ChatHistoryResponse",
+  "type": "object"
+}

@@ -1,0 +1,97 @@
+{
+  "$defs": {
+    "SavedScheduleView": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "integer"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "startsAt": {
+          "format": "date-time",
+          "title": "Startsat",
+          "type": "string"
+        },
+        "endsAt": {
+          "format": "date-time",
+          "title": "Endsat",
+          "type": "string"
+        },
+        "status": {
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "startsAt",
+        "endsAt",
+        "status"
+      ],
+      "title": "SavedScheduleView",
+      "type": "object"
+    },
+    "SavedTaskView": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "integer"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "dueAt": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Dueat"
+        },
+        "status": {
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "dueAt",
+        "status"
+      ],
+      "title": "SavedTaskView",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "tasks": {
+      "items": {
+        "$ref": "#/$defs/SavedTaskView"
+      },
+      "title": "Tasks",
+      "type": "array"
+    },
+    "schedules": {
+      "items": {
+        "$ref": "#/$defs/SavedScheduleView"
+      },
+      "title": "Schedules",
+      "type": "array"
+    }
+  },
+  "required": [
+    "tasks",
+    "schedules"
+  ],
+  "title": "LifeItemsView",
+  "type": "object"
+}

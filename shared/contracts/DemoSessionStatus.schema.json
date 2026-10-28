@@ -1,0 +1,19 @@
+{
+  "properties": {
+    "expiresAt": {
+      "title": "Expiresat",
+      "type": "string"
+    },
+    "mode": {
+      "const": "demo",
+      "default": "demo",
+      "title": "Mode",
+      "type": "string"
+    }
+  },
+  "required": [
+    "expiresAt"
+  ],
+  "title": "DemoSessionStatus",
+  "type": "object"
+}

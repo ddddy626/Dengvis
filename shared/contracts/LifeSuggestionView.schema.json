@@ -1,0 +1,96 @@
+{
+  "$defs": {
+    "LifeItemDraft": {
+      "properties": {
+        "kind": {
+          "enum": [
+            "task",
+            "schedule"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "title": {
+          "maxLength": 255,
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "dueAt": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Dueat"
+        },
+        "startsAt": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Startsat"
+        },
+        "endsAt": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Endsat"
+        }
+      },
+      "required": [
+        "kind",
+        "title"
+      ],
+      "title": "LifeItemDraft",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "items": {
+      "items": {
+        "$ref": "#/$defs/LifeItemDraft"
+      },
+      "maxItems": 8,
+      "minItems": 1,
+      "title": "Items",
+      "type": "array"
+    },
+    "questions": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 3,
+      "title": "Questions",
+      "type": "array"
+    },
+    "model": {
+      "title": "Model",
+      "type": "string"
+    }
+  },
+  "required": [
+    "items",
+    "model"
+  ],
+  "title": "LifeSuggestionView",
+  "type": "object"
+}

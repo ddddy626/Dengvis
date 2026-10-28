@@ -1,0 +1,18 @@
+{
+  "properties": {
+    "online": {
+      "title": "Online",
+      "type": "boolean"
+    },
+    "deviceId": {
+      "title": "Deviceid",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "online",
+    "deviceId"
+  ],
+  "title": "HeartbeatView",
+  "type": "object"
+}

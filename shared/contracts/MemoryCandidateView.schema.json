@@ -1,0 +1,51 @@
+{
+  "properties": {
+    "id": {
+      "title": "Id",
+      "type": "integer"
+    },
+    "summary": {
+      "title": "Summary",
+      "type": "string"
+    },
+    "evidenceRef": {
+      "title": "Evidenceref",
+      "type": "string"
+    },
+    "purpose": {
+      "title": "Purpose",
+      "type": "string"
+    },
+    "expiresAt": {
+      "format": "date-time",
+      "title": "Expiresat",
+      "type": "string"
+    },
+    "status": {
+      "title": "Status",
+      "type": "string"
+    },
+    "memoryId": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Memoryid"
+    }
+  },
+  "required": [
+    "id",
+    "summary",
+    "evidenceRef",
+    "purpose",
+    "expiresAt",
+    "status",
+    "memoryId"
+  ],
+  "title": "MemoryCandidateView",
+  "type": "object"
+}

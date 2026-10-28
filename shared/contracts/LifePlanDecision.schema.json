@@ -1,0 +1,18 @@
+{
+  "properties": {
+    "decision": {
+      "enum": [
+        "allow_once",
+        "allow_scope",
+        "deny"
+      ],
+      "title": "Decision",
+      "type": "string"
+    }
+  },
+  "required": [
+    "decision"
+  ],
+  "title": "LifePlanDecision",
+  "type": "object"
+}

@@ -1,0 +1,166 @@
+{
+  "$defs": {
+    "LifeApprovalView": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "integer"
+        },
+        "decision": {
+          "title": "Decision",
+          "type": "string"
+        },
+        "scope": {
+          "title": "Scope",
+          "type": "string"
+        },
+        "expiresAt": {
+          "format": "date-time",
+          "title": "Expiresat",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "decision",
+        "scope",
+        "expiresAt"
+      ],
+      "title": "LifeApprovalView",
+      "type": "object"
+    },
+    "LifeItemDraft": {
+      "properties": {
+        "kind": {
+          "enum": [
+            "task",
+            "schedule"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "title": {
+          "maxLength": 255,
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "dueAt": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Dueat"
+        },
+        "startsAt": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Startsat"
+        },
+        "endsAt": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Endsat"
+        }
+      },
+      "required": [
+        "kind",
+        "title"
+      ],
+      "title": "LifeItemDraft",
+      "type": "object"
+    },
+    "SavedItemRef": {
+      "properties": {
+        "kind": {
+          "enum": [
+            "task",
+            "schedule"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "id": {
+          "title": "Id",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "kind",
+        "id"
+      ],
+      "title": "SavedItemRef",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "jobId": {
+      "title": "Jobid",
+      "type": "integer"
+    },
+    "status": {
+      "title": "Status",
+      "type": "string"
+    },
+    "intent": {
+      "title": "Intent",
+      "type": "string"
+    },
+    "items": {
+      "items": {
+        "$ref": "#/$defs/LifeItemDraft"
+      },
+      "title": "Items",
+      "type": "array"
+    },
+    "saved": {
+      "items": {
+        "$ref": "#/$defs/SavedItemRef"
+      },
+      "title": "Saved",
+      "type": "array"
+    },
+    "memoryUsed": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Memoryused",
+      "type": "array"
+    },
+    "approval": {
+      "$ref": "#/$defs/LifeApprovalView"
+    }
+  },
+  "required": [
+    "jobId",
+    "status",
+    "intent",
+    "items",
+    "saved",
+    "approval"
+  ],
+  "title": "LifePlanView",
+  "type": "object"
+}

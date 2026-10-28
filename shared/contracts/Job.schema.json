@@ -1,0 +1,44 @@
+{
+  "properties": {
+    "version": {
+      "const": 1,
+      "default": 1,
+      "title": "Version",
+      "type": "integer"
+    },
+    "jobId": {
+      "title": "Jobid",
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "queued",
+        "running",
+        "waiting_approval",
+        "waiting_pc",
+        "retry_scheduled",
+        "succeeded",
+        "failed",
+        "cancelled"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "intent": {
+      "title": "Intent",
+      "type": "string"
+    },
+    "canCancel": {
+      "title": "Cancancel",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "jobId",
+    "status",
+    "intent",
+    "canCancel"
+  ],
+  "title": "Job",
+  "type": "object"
+}

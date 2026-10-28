@@ -1,0 +1,13 @@
+{
+  "properties": {
+    "revoked": {
+      "title": "Revoked",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "revoked"
+  ],
+  "title": "RevokeDeviceView",
+  "type": "object"
+}

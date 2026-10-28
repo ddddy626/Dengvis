@@ -1,0 +1,22 @@
+{
+  "properties": {
+    "kind": {
+      "enum": [
+        "task",
+        "schedule"
+      ],
+      "title": "Kind",
+      "type": "string"
+    },
+    "id": {
+      "title": "Id",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "kind",
+    "id"
+  ],
+  "title": "SavedItemRef",
+  "type": "object"
+}

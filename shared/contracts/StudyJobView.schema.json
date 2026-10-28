@@ -1,0 +1,131 @@
+{
+  "$defs": {
+    "StudyExcerpt": {
+      "properties": {
+        "source": {
+          "maxLength": 255,
+          "minLength": 1,
+          "title": "Source",
+          "type": "string"
+        },
+        "page": {
+          "minimum": 1,
+          "title": "Page",
+          "type": "integer"
+        },
+        "text": {
+          "maxLength": 500,
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        },
+        "score": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Score",
+          "type": "number"
+        }
+      },
+      "required": [
+        "source",
+        "page",
+        "text",
+        "score"
+      ],
+      "title": "StudyExcerpt",
+      "type": "object"
+    },
+    "StudyOutcome": {
+      "properties": {
+        "success": {
+          "title": "Success",
+          "type": "boolean"
+        },
+        "modelName": {
+          "maxLength": 80,
+          "minLength": 1,
+          "title": "Modelname",
+          "type": "string"
+        },
+        "elapsedMs": {
+          "maximum": 600000,
+          "minimum": 0,
+          "title": "Elapsedms",
+          "type": "integer"
+        },
+        "excerpts": {
+          "items": {
+            "$ref": "#/$defs/StudyExcerpt"
+          },
+          "maxItems": 3,
+          "title": "Excerpts",
+          "type": "array"
+        },
+        "error": {
+          "anyOf": [
+            {
+              "maxLength": 500,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Error"
+        }
+      },
+      "required": [
+        "success",
+        "modelName",
+        "elapsedMs"
+      ],
+      "title": "StudyOutcome",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "jobId": {
+      "title": "Jobid",
+      "type": "integer"
+    },
+    "status": {
+      "title": "Status",
+      "type": "string"
+    },
+    "query": {
+      "title": "Query",
+      "type": "string"
+    },
+    "result": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/StudyOutcome"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "createdAt": {
+      "format": "date-time",
+      "title": "Createdat",
+      "type": "string"
+    },
+    "updatedAt": {
+      "format": "date-time",
+      "title": "Updatedat",
+      "type": "string"
+    }
+  },
+  "required": [
+    "jobId",
+    "status",
+    "query",
+    "result",
+    "createdAt",
+    "updatedAt"
+  ],
+  "title": "StudyJobView",
+  "type": "object"
+}

@@ -1,0 +1,17 @@
+{
+  "properties": {
+    "decision": {
+      "enum": [
+        "confirm",
+        "reject"
+      ],
+      "title": "Decision",
+      "type": "string"
+    }
+  },
+  "required": [
+    "decision"
+  ],
+  "title": "MemoryDecision",
+  "type": "object"
+}

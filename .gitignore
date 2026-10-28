@@ -1,0 +1,46 @@
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.keystore
+*.jks
+*.p12
+*.pem
+*.key
+local.properties
+
+# Python and local model cache
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.runtime/
+
+# JavaScript and web builds
+.npm-cache/
+node_modules/
+web/dist/
+
+# Android and IDE builds
+.gradle/
+.kotlin/
+**/build/
+.idea/
+*.apk
+*.aab
+
+# Local test artifacts and historical snapshots
+.run/
+backups/
+*.log
+*.bak
+*.bak[0-9]
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local development change records
+docs/change-list-*.md

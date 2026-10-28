@@ -1,0 +1,24 @@
+{
+  "properties": {
+    "token": {
+      "title": "Token",
+      "type": "string"
+    },
+    "deviceId": {
+      "title": "Deviceid",
+      "type": "integer"
+    },
+    "expiresAt": {
+      "format": "date-time",
+      "title": "Expiresat",
+      "type": "string"
+    }
+  },
+  "required": [
+    "token",
+    "deviceId",
+    "expiresAt"
+  ],
+  "title": "WorkerTokenView",
+  "type": "object"
+}

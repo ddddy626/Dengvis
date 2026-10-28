@@ -1,0 +1,37 @@
+{
+  "properties": {
+    "summary": {
+      "maxLength": 1000,
+      "minLength": 1,
+      "title": "Summary",
+      "type": "string"
+    },
+    "evidenceRef": {
+      "maxLength": 512,
+      "minLength": 1,
+      "title": "Evidenceref",
+      "type": "string"
+    },
+    "purpose": {
+      "enum": [
+        "planning",
+        "conversation"
+      ],
+      "title": "Purpose",
+      "type": "string"
+    },
+    "expiresAt": {
+      "format": "date-time",
+      "title": "Expiresat",
+      "type": "string"
+    }
+  },
+  "required": [
+    "summary",
+    "evidenceRef",
+    "purpose",
+    "expiresAt"
+  ],
+  "title": "MemoryCandidateCreate",
+  "type": "object"
+}

@@ -1,0 +1,57 @@
+{
+  "properties": {
+    "version": {
+      "const": 1,
+      "default": 1,
+      "title": "Version",
+      "type": "integer"
+    },
+    "candidateId": {
+      "title": "Candidateid",
+      "type": "string"
+    },
+    "summary": {
+      "title": "Summary",
+      "type": "string"
+    },
+    "evidenceRef": {
+      "title": "Evidenceref",
+      "type": "string"
+    },
+    "purpose": {
+      "title": "Purpose",
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "candidate",
+        "confirmed",
+        "rejected",
+        "expired"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "expiresAt": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Expiresat"
+    }
+  },
+  "required": [
+    "candidateId",
+    "summary",
+    "evidenceRef",
+    "purpose",
+    "status"
+  ],
+  "title": "MemoryCandidate",
+  "type": "object"
+}

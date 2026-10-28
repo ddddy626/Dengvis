@@ -1,0 +1,13 @@
+{
+  "properties": {
+    "revoked": {
+      "title": "Revoked",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "revoked"
+  ],
+  "title": "PermissionRevokeView",
+  "type": "object"
+}

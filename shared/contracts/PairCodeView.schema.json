@@ -1,0 +1,19 @@
+{
+  "properties": {
+    "code": {
+      "title": "Code",
+      "type": "string"
+    },
+    "expiresAt": {
+      "format": "date-time",
+      "title": "Expiresat",
+      "type": "string"
+    }
+  },
+  "required": [
+    "code",
+    "expiresAt"
+  ],
+  "title": "PairCodeView",
+  "type": "object"
+}

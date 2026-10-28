@@ -1,0 +1,24 @@
+{
+  "properties": {
+    "token": {
+      "title": "Token",
+      "type": "string"
+    },
+    "expiresAt": {
+      "title": "Expiresat",
+      "type": "string"
+    },
+    "mode": {
+      "const": "account",
+      "default": "account",
+      "title": "Mode",
+      "type": "string"
+    }
+  },
+  "required": [
+    "token",
+    "expiresAt"
+  ],
+  "title": "AccountTokenResponse",
+  "type": "object"
+}

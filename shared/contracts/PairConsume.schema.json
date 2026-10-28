@@ -1,0 +1,15 @@
+{
+  "properties": {
+    "code": {
+      "maxLength": 128,
+      "minLength": 30,
+      "title": "Code",
+      "type": "string"
+    }
+  },
+  "required": [
+    "code"
+  ],
+  "title": "PairConsume",
+  "type": "object"
+}

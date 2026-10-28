@@ -1,0 +1,95 @@
+{
+  "$defs": {
+    "HudWidget": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "weather_card",
+            "schedule_timeline",
+            "task_checklist",
+            "sleep_summary",
+            "knowledge_snippets",
+            "study_plan",
+            "agent_progress",
+            "explanation_card",
+            "permission_request",
+            "avatar_stage",
+            "error_state"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "dataRef": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Dataref"
+        },
+        "text": {
+          "anyOf": [
+            {
+              "maxLength": 500,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Text"
+        }
+      },
+      "required": [
+        "id",
+        "type"
+      ],
+      "title": "HudWidget",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "layoutVersion": {
+      "const": 1,
+      "default": 1,
+      "title": "Layoutversion",
+      "type": "integer"
+    },
+    "view": {
+      "title": "View",
+      "type": "string"
+    },
+    "mode": {
+      "enum": [
+        "compact",
+        "standard",
+        "spatial"
+      ],
+      "title": "Mode",
+      "type": "string"
+    },
+    "widgets": {
+      "items": {
+        "$ref": "#/$defs/HudWidget"
+      },
+      "title": "Widgets",
+      "type": "array"
+    }
+  },
+  "required": [
+    "view",
+    "mode",
+    "widgets"
+  ],
+  "title": "HudSchema",
+  "type": "object"
+}

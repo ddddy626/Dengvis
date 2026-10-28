@@ -1,0 +1,35 @@
+{
+  "properties": {
+    "id": {
+      "title": "Id",
+      "type": "integer"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    },
+    "startsAt": {
+      "format": "date-time",
+      "title": "Startsat",
+      "type": "string"
+    },
+    "endsAt": {
+      "format": "date-time",
+      "title": "Endsat",
+      "type": "string"
+    },
+    "status": {
+      "title": "Status",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "title",
+    "startsAt",
+    "endsAt",
+    "status"
+  ],
+  "title": "SavedScheduleView",
+  "type": "object"
+}
